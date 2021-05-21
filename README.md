@@ -2,7 +2,7 @@
     <img alt="PetFood" src="https://raw.githubusercontent.com/Gabsop/PetFood/main/imgs/logo.png"/>
 </h1>
 
-<p align="center">PetFood is an application designed to be a marketplace for buying Pet Food. It was made with React for study purposes. Project made with "Irmão mais Velho" vídeos.<p>
+<p align="center">PetFood is an application designed to be a marketplace for buying Pet Food. It was made for study purposes. Project made through "Irmão mais Velho" vídeos.<p>
 
 # Pages 🦴
 
