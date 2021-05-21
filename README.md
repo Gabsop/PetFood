@@ -15,9 +15,10 @@
 ![image](https://github.com/Gabsop/PetFood/blob/main/imgs/PetFood-img4.png?raw=true)
 
 # Technologies used 🖥
-- :rocket: Layout: Figma
+- :computer: Layout: Figma
 - :rocket: Frontend: React, React Dock, React Google Map, Redux, Redux Saga, Underscore
-- :rocket: Backend: Node, Axios, Mongoose, Express, Cors, Morgan
+- :technologist: Backend: Node, Axios, Mongoose, Express, Cors, Morgan
+- :star: I also used the Pagar.Me API to make the payments to the stores and the marketplace owner.
 
 <blockquote alt="[ignore]">
   <p>
