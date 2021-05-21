@@ -15,6 +15,7 @@
 ![image](https://github.com/Gabsop/PetFood/blob/main/imgs/PetFood-img4.png?raw=true)
 
 # Technologies used 🖥
+- :rocket: Layout: Figma
 - :rocket: Frontend: React, React Dock, React Google Map, Redux, Redux Saga, Underscore
 - :rocket: Backend: Node, Axios, Mongoose, Express, Cors, Morgan
 
