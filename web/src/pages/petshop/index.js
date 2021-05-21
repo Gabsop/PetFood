@@ -1,8 +1,22 @@
 import "./styles.css";
+
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { requestPetshop } from "../../store/modules/shop/actions";
+
 import Header from "../../components/header";
 import Product from "../../components/product/card";
 
-const Petshop = () => {
+const Petshop = ({ match }) => {
+  const dispatch = useDispatch();
+  const { petshop } = useSelector((state) => state.shop);
+
+  useEffect(() => {
+    dispatch(requestPetshop(match.params.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="h-100">
       <Header />
@@ -10,18 +24,18 @@ const Petshop = () => {
         <div className="row">
           <div className="col-2">
             <img
-              src="https://www.petlove.com.br/static/uploads/banner_image/image/4304/logo-petlove-push.png"
+              src={petshop.logo}
               alt="Petshop logo"
               className="img-fluid petshop-image"
             />
-            <b>Petlove</b>
+            <b>{petshop.nome}</b>
             <div className="petshop-infos">
               <span className="mdi mdi-star"></span>
               <text>
-                <b> 2,8</b>
+                <b> {petshop.destaque}</b>
               </text>
               <span className="mdi mdi-cash-usd-outline"></span>
-              <text> $$$</text>
+              <text> {petshop.categoria}</text>
               <span className="mdi mdi-crosshairs-gps"></span>
               <text> 2,9km</text>
             </div>
@@ -31,8 +45,8 @@ const Petshop = () => {
             <h5>Produtos</h5>
             <br />
             <div className="row">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((p) => (
-                <Product />
+              {petshop.products?.map((p) => (
+                <Product product={p} />
               ))}
             </div>
           </div>

@@ -7,6 +7,7 @@ const petshop = new Schema({
   categoria: String,
   destaque: Number,
   location: Object,
+  badge: String,
   recipient_id: String,
 });
 

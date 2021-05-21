@@ -18,3 +18,7 @@
   border-radius: 5px;
   margin-bottom: 20px;
 }
+
+.product button.btn-secondary {
+  padding: 1px 14px;
+}

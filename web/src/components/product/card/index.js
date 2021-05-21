@@ -1,22 +1,33 @@
 import "./styles.css";
 
-const Product = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCartProduct } from "../../../store/modules/shop/actions";
+
+const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.shop);
+  const added = cart.findIndex((p) => p._id === product._id) !== -1;
+
   return (
     <div className="product col-3">
       <img
-        src="https://www.tanakao.com.br/media/catalog/product/cache/1/image/600x970/9df78eab33525d08d6e5fb8d27136e95/t/h/thumb_f2612a6c-21ca-4256-a0e4-0f78a9b0c652.png"
+        src={product.capa}
         alt="Product logo"
         className="img-fluid align-center"
       />
-      <button className="btn btn-primary rounded-circle">+</button>
+      <button
+        onClick={() => dispatch(toggleCartProduct(product))}
+        className={`btn btn-${added ? "secondary" : "primary"} rounded-circle`}
+      >
+        {added ? "-" : "+"}
+      </button>
       <h4>
-        <label className="badge badge-primary">R$ 30,00</label>
+        <label className="badge badge-primary">
+          R$ {product.preco.toFixed(2)}
+        </label>
       </h4>
       <small>
-        <b>
-          Ração Pedigree Carne Frango e Cereais Para Cães Adultos Raças Médias e
-          Grandes
-        </b>
+        <b>{product.nome}</b>
       </small>
     </div>
   );
